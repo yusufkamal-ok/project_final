@@ -1,6 +1,8 @@
 const nodemailer = require('nodemailer');
 import ejs from "ejs";
 import path from "path";
+import dotenv from 'dotenv';
+dotenv.config();
 
 const transporter = nodemailer.createTransport({
     service : "Zoho",
@@ -8,8 +10,8 @@ const transporter = nodemailer.createTransport({
     port : 465,
     secure : true,
     auth : {
-        user : "",
-        pass: ""
+        user : process.env.user,
+        pass: process.env.pass
     },
     requireTLS : true,
 });
