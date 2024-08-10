@@ -129,6 +129,6 @@
     }
     ```
   - Jika Order Success akan mengirimkan email invoice :
-    !(images/ss_mail.png)
+    ![Tampilan Aplikasi](images/ss_mail.png)
 - **GET** `/order?userId=id user`
   - Deskripsi: Menampilkan semua order berdasarkan id user.
