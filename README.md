@@ -117,7 +117,7 @@
   - Request Body:
     ```json
     {
-    grandTotal": 150,
+    "grandTotal": 150,
     "orderItems": [
     {
       "product": "id product",
