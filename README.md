@@ -59,7 +59,7 @@
     {
     "name": "nameproduct",
     "description": "Deskripsi product",
-    "images": ["images product],
+    "images": ["images product"],
     "price": 10000,
     "qty": 100,
     "category": "categoryproduct"
@@ -76,7 +76,7 @@
     {
       "name": "nameproduct",
       "description": "Deskripsi product",
-      "images": ["images product],
+      "images": ["images product"],
       "price": 10000,
       "qty": 100,
       "category": "categoryproduct"
