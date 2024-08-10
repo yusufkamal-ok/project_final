@@ -33,7 +33,7 @@
 
 - **GET** `/auth/me`
   - Deskripsi: Detail User.
-  - Bearer Token : Token
+  - Auth Type : Bearer Token 
  
 - **PUT** `/auth/profile`
   - Deskripsi: Update informasi user.
@@ -48,9 +48,34 @@
     }
     ```
 
+### 2. Category
+
+- **POST** `/category`
+  - Deskripsi: add category.
+  - Request Body:
+    ```json
+    {
+    "nameCategory" : "Categoryproduct"
+    }
+    ```
+
+- **GET** `/category`
+  - Deskripsi: Menampilkan semua category produk.
+ 
+- **PUT** `/category/:id`
+  - Deskripsi: Update category.
+  - Request Body:
+    ```json
+    {
+    "nameCategory" : "categoryproduct"
+    }
+    
+- **DELETE** `/category/:id`
+  - Deskripsi: Delete category berdasarkan id.
+
 
   
-### 1. Product
+### 3. Product
 
 - **POST** `/products`
   - Deskripsi: add product.
@@ -59,10 +84,10 @@
     {
     "name": "nameproduct",
     "description": "Deskripsi product",
-    "images": ["images product"],
+    "images": ["imagesproduct"],
     "price": 10000,
     "qty": 100,
-    "category": "categoryproduct"
+    "category": "id categoryproduct"
     }
     ```
 
@@ -76,11 +101,33 @@
     {
       "name": "nameproduct",
       "description": "Deskripsi product",
-      "images": ["images product"],
+      "images": ["imagesproduct"],
       "price": 10000,
       "qty": 100,
-      "category": "categoryproduct"
+      "category": "id categoryproduct"
     }
     
 - **DELETE** `/products/:id`
   - Deskripsi: Delete produk berdasarkan id.
+
+### 4. Order
+
+- **POST** `/order`
+  - Deskripsi: add order.
+  - Request Body:
+    ```json
+    {
+    grandTotal": 150,
+    "orderItems": [
+    {
+      "product": "id product",
+      "quantity": 2
+    }
+    ],
+    "createdBy": "id user",
+    "status": "pending"
+    }
+    ```
+
+- **GET** `/order?userId=id user`
+  - Deskripsi: Menampilkan semua order berdasarkan id user.
