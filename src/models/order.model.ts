@@ -1,5 +1,6 @@
 import mongoose from "mongoose";
 import UserModel from "./user.model";
+import ProductsModel from "./products.model";
 
 import mail from "../utils/mail"
 
@@ -35,11 +36,20 @@ OrderShcema.post("save",async function (doc, next){
     const order = doc;
 
     const user = await UserModel.findById(order.createdBy);
+    const Order_item = await Promise.all(order.orderItems.map(async (item) => {
+        const product_order = await ProductsModel.findById(item.product);
+        return {
+            name: product_order?.name || "Unknown",
+            quantity: item.quantity,
+            price: product_order?.price || 0
+        };
+    }));
+
     console.log("send email to",user?.email);
 
     const content = await mail.render("order-success.ejs",{
         customerName : user?.fullName,
-        orderItems : order.orderItems,
+        orderItems : Order_item,
         grandTotal : order.grandTotal,
         contactEmail : "okeaja_918@zohomail.com",
         companyName : "Ecomm",
