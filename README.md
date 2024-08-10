@@ -1,7 +1,7 @@
 # project_final
 
 ## URL Deploy
-- **Public** https://project-final-seven-silk.vercel.app/api
+- **Public:** https://project-final-seven-silk.vercel.app/api
 - **Local:** http://localhost:3000/api
 
 ## Daftar Endpoint
