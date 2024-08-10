@@ -28,3 +28,8 @@
       "password": "password123"
     }
     ```
+
+    
+- **GET** `/auth/me`
+  - Deskripsi: Detail User.
+  - Bearer Token : Token
